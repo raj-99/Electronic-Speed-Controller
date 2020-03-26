@@ -25,12 +25,6 @@ int Delay=4000;
 unsigned long previousMillis = 0; 
 unsigned long currentMillis = 0;
 
-
-int phase = 1;
-int Delay=4000;
-unsigned long previousMillis = 0; 
-unsigned long currentMillis = 0;
-
 void setup() {
   //Define sensor pins and potentiometer as inputs
   pinMode(pot,INPUT);
