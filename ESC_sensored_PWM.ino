@@ -20,13 +20,13 @@ unsigned long counter, current_count;
 byte lastPWM_state;
 int PWM_width = 1000;
 
-int fase = 1;
+int phase = 1;
 int Delay=4000;
 unsigned long previousMillis = 0; 
 unsigned long currentMillis = 0;
 
 
-int fase = 1;
+int phase = 1;
 int Delay=4000;
 unsigned long previousMillis = 0; 
 unsigned long currentMillis = 0;
@@ -64,7 +64,7 @@ void loop() {
    
     if(PWM_width > 1070)
     {
-      switch(fase){
+      switch(phase){
   
         //Phase1 A-B
         case 1:
@@ -128,28 +128,28 @@ ISR(PCINT0_vect){
 
   
   //This part will run any time any of the sensor pins will change its value.
-  if(  (PINB & B00000101) && fase == 6  ){   
-    fase = 1;    
+  if(  (PINB & B00000101) && phase == 6  ){   
+    phase = 1;    
   }
 
-  if(  (PINB & B00000100) && fase == 1 ){   
-    fase = 2;    
+  if(  (PINB & B00000100) && phase == 1 ){   
+    phase = 2;    
   }
 
-  if(  (PINB & B00000110) && fase == 2 ){   
-    fase = 3;    
+  if(  (PINB & B00000110) && phase == 2 ){   
+    phase = 3;    
   }
 
-  if(  (PINB & B00000010) && fase == 3 ){   
-    fase = 4;    
+  if(  (PINB & B00000010) && phase == 3 ){   
+    phase = 4;    
   }
 
-  if(  (PINB & B00000011) && fase == 4 ){   
-    fase = 5;    
+  if(  (PINB & B00000011) && phase == 4 ){   
+    phase = 5;    
   }
 
-  if(  (PINB & B00000001) && fase == 5 ){   
-    fase = 6;    
+  if(  (PINB & B00000001) && phase == 5 ){   
+    phase = 6;    
   }
 }
 
